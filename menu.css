@@ -1,0 +1,256 @@
+/* ==========================================================
+   VARIABLES: cambia aquí colores, fuentes y espacios
+   ========================================================== */
+:root {
+    /* Vino */
+    --vino: #6b1f35;
+    --vino-oscuro: #4a1425;
+
+    /* Grises */
+    --gris-100: #f1f0f0;
+    --gris-200: #e2e0e0;
+    --gris-400: #a09d9e;
+    --gris-600: #6a6768;
+    --carbon: #2b2829;
+
+    /* Tipografía */
+    --fuente-titulo: "Syne", "Arial Black", sans-serif;
+    --fuente-texto: "Manrope", "Segoe UI", sans-serif;
+
+    /* Espacios */
+    --espacio-lateral: clamp(1.5rem, 6vw, 5rem);
+    --espacio-seccion: clamp(3rem, 8vw, 6rem);
+}
+
+/* ==========================================================
+   BASE
+   ========================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--gris-100);
+    color: var(--carbon);
+    font-family: var(--fuente-texto);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--vino);
+    outline-offset: 3px;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+}
+
+/* ==========================================================
+   ENCABEZADO
+   ========================================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem var(--espacio-lateral);
+    background: var(--gris-100);
+}
+
+.header__brand {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--vino);
+}
+
+.header__course {
+    font-size: 0.95rem;
+    color: var(--gris-600);
+}
+
+/* ==========================================================
+   PORTADA
+   ========================================================== */
+.hero {
+    background: var(--vino);
+    color: var(--gris-100);
+    padding: var(--espacio-seccion) var(--espacio-lateral);
+    animation: hero-entrada 0.9s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+.hero__content {
+    max-width: 70rem;
+}
+
+.hero__name {
+    font-family: var(--fuente-titulo);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 14vw, 10.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+}
+
+.hero__name-line {
+    display: block;
+}
+
+.hero__alias {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 0.5rem 1.1rem;
+    border: 1px solid var(--gris-400);
+    border-radius: 999px;
+    font-size: 0.95rem;
+    color: var(--gris-200);
+}
+
+/* ==========================================================
+   JUEGOS
+   ========================================================== */
+.games {
+    padding: var(--espacio-seccion) var(--espacio-lateral);
+}
+
+.games__header {
+    margin-bottom: 2rem;
+}
+
+.games__title {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--carbon);
+}
+
+.games__list {
+    border-bottom: 1px solid var(--gris-400);
+}
+
+/* Cada juego */
+.game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.25rem 1.5rem;
+    border-top: 1px solid var(--gris-400);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.game__info {
+    max-width: 36rem;
+}
+
+.game__name {
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+}
+
+.game__description {
+    color: var(--gris-600);
+    transition: color 0.25s ease;
+}
+
+.game__action {
+    flex-shrink: 0;
+}
+
+.game__link {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    background: var(--vino);
+    color: var(--gris-100);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Al pasar el cursor, la fila entera se llena de vino */
+.game:hover,
+.game:focus-within {
+    background: var(--vino);
+    color: var(--gris-100);
+}
+
+.game:hover .game__description,
+.game:focus-within .game__description {
+    color: var(--gris-200);
+}
+
+.game:hover .game__link,
+.game:focus-within .game__link {
+    background: var(--gris-100);
+    color: var(--vino);
+}
+
+.game__link:focus-visible {
+    outline-color: var(--gris-100);
+}
+
+/* ==========================================================
+   PIE
+   ========================================================== */
+.footer {
+    padding: 2rem var(--espacio-lateral);
+    background: var(--carbon);
+    color: var(--gris-400);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================
+   ANIMACIÓN (solo la portada, al cargar)
+   ========================================================== */
+@keyframes hero-entrada {
+    from {
+        clip-path: inset(0 0 100% 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero {
+        animation: none;
+    }
+
+    .game,
+    .game__link,
+    .game__description {
+        transition: none;
+    }
+}
+
+/* ==========================================================
+   MÓVIL
+   ========================================================== */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .game {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.75rem 1rem;
+    }
+}
