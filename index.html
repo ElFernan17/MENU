@@ -1,16 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
     <head>
-        <link rel="stylesheet" href="menu.css">
-        <a1>Fernando Silva</a1>
-        <a2>Alias: El Fernan</a2>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fernando Silva</title>
 
-        <p>Curso G7-M1</p>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="menu.css">
     </head>
+
     <body>
-        <a href="https://juego-cazando-virid.vercel.app/">JUEGO CAZANDO</a>
-        <p>"juego en el que tendras que cazar siendo un gato a un punto aleatorio en el mapa"</p>
-        <p><a href="https://juego-limones-iota-fawn.vercel.app/">JUEGO LIMONES</a></p>
-        "juego en el que tendras que atrapar limones que caen del cielo para hacerte una limonada"
+        <div class="page">
+
+            <!-- ENCABEZADO -->
+            <header class="header">
+                <div class="header__brand">Fernando Silva</div>
+                <div class="header__course">Curso G7-M1</div>
+            </header>
+
+            <main class="main">
+
+                <!-- PORTADA -->
+                <section class="hero">
+                    <div class="hero__content">
+                        <h1 class="hero__name">
+                            <span class="hero__name-line">Fernando</span>
+                            <span class="hero__name-line">Silva</span>
+                        </h1>
+                        <div class="hero__alias">Alias: El Fernan</div>
+                    </div>
+                </section>
+
+                <!-- JUEGOS -->
+                <section class="games">
+                    <div class="games__header">
+                        <h2 class="games__title">Mis juegos</h2>
+                    </div>
+
+                    <div class="games__list">
+
+                        <!-- Juego: Cazando -->
+                        <div class="game">
+                            <div class="game__info">
+                                <h3 class="game__name">Juego Cazando</h3>
+                                <p class="game__description">Juego en el que, siendo un gato, tendrás que cazar un punto aleatorio en el mapa.</p>
+                            </div>
+                            <div class="game__action">
+                                <a class="game__link" href="https://juego-cazando-virid.vercel.app/" target="_blank" rel="noopener">Jugar</a>
+                            </div>
+                        </div>
+
+                        <!-- Juego: Limones -->
+                        <div class="game">
+                            <div class="game__info">
+                                <h3 class="game__name">Juego Limones</h3>
+                                <p class="game__description">Juego en el que tendrás que atrapar los limones que caen del cielo para hacerte una limonada.</p>
+                            </div>
+                            <div class="game__action">
+                                <a class="game__link" href="https://juego-limones-iota-fawn.vercel.app/" target="_blank" rel="noopener">Jugar</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- PIE -->
+            <footer class="footer">
+                <div class="footer__text">Fernando Silva, curso G7-M1</div>
+            </footer>
+
+        </div>
     </body>
 </html>
