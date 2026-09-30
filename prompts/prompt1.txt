@@ -1,0 +1,1 @@
+actua como un diseñador grafico y crea una interfaz llamativa y minimalista en colores vino y tonalidades de grises, manten separados los archivos de css y index, crea divs para cada parte de los elementos con el objetivo de facilitar cambios a futuro
